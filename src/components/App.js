@@ -6,13 +6,15 @@ import {
   Switch,
   Link
 } from 'react-router-dom';
+import characters from '../hooks/xfiles';
+import Xfiles from './xfiles/Xfiles';
 
 const Home = () => (
   <>
     <h1>Home</h1>
     <ul>
       <li>
-        
+
       </li>
     </ul>
   </ >
@@ -49,14 +51,17 @@ const Header = () => (
 );
 
 export default function App() {
+  //const characters = 
   //return <h1>Hello World</h1>;
   return (
     <Router>
       <Header />
+      <Xfiles />
       <Switch>
         <Route exact path="/" component={Home} />
         {/* <Route path="/about" component={About} /> */}
         <Route path="/about/:name" component={About} />
+        {/* <Route path="/xfile/:name" component={Detail} /> */}
         {/* <Route path="/contact" component={Contact} />
         <Route path="/color/:color" component={Color} />
 
