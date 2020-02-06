@@ -1,4 +1,4 @@
-import { getXFiles } from '../services/xFilesApi';
+import { getXFiles, getXfileCharacter } from '../services/xFilesApi';
 import { useState, useEffect } from 'react';
 
 export const useXfiles = () => {
@@ -14,3 +14,11 @@ export const useXfiles = () => {
   // }, [searchTerm]);
 };
 
+export const useXfilesCharacter = (name) => {
+  const [character, setCharacter] = useState({});
+  useEffect(() => {
+    getXfileCharacter(name)
+      .then(setCharacter);
+  }, [name]);
+  return character;
+};

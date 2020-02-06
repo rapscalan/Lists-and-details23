@@ -8,15 +8,12 @@ import {
 } from 'react-router-dom';
 import characters from '../hooks/xfiles';
 import Xfiles from './xfiles/Xfiles';
+import XfileDetail from './xfiles/XfileDetail';
 
 const Home = () => (
   <>
     <h1>Home</h1>
-    <ul>
-      <li>
-
-      </li>
-    </ul>
+    <Xfiles />
   </ >
 );
 
@@ -56,11 +53,11 @@ export default function App() {
   return (
     <Router>
       <Header />
-      <Xfiles />
       <Switch>
         <Route exact path="/" component={Home} />
         {/* <Route path="/about" component={About} /> */}
         <Route path="/about/:name" component={About} />
+        <Route path="/xfile/:name" component={XfileDetail} />
         {/* <Route path="/xfile/:name" component={Detail} /> */}
         {/* <Route path="/contact" component={Contact} />
         <Route path="/color/:color" component={Color} />

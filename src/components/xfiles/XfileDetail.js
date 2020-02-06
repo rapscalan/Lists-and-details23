@@ -1,29 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
 import Xfile from './Xfile';
-import { useXfiles } from '../../hooks/xfiles';
+import { useXfiles, useXfilesCharacter } from '../../hooks/xfiles';
 import { Link } from 'react-router-dom';
 
+// const XfileDetail = ({ name }) => {
+//   const character = useXfilesCharacter(name);
 const XfileDetail = () => {
-  const files = useXfiles();
-
-  // const fileElements = files.map((file, i) => (
-  //   <li key={i}>
-  //     <Link to={`/xfile/${file.name}`}>
-  //       <Xfile {...file} />
-  //     </Link>
-  //   </li>
-  // ));
+  //console.log(match);
+  const { name } = useParams();
+  console.log(name);
+  // const { name, image, description, occupation, status } = useXfilesCharacter(character[name]);
+  const character = useXfilesCharacter(name);
+  //console.log(character);
 
   return (
     <div>
-      {fileElements}
+      <img src={character.image} />
+      <p>{name}</p>
+      <p>{character.description}</p>
+      <p>{character.occupation}</p>
+      <p>{character.status}</p>
+      {/* <h1>{character.name}</h1> */}
+      {/* {character} */}
     </div>
   );
 };
 
-// Xfile.propTypes = {
-//   searchTerm: PropTypes.string.isRequired
+// XfileDetail.propTypes = {
+//   name: PropTypes.string.isRequired
 // };
 
 export default XfileDetail;
