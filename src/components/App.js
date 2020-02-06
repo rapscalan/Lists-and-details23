@@ -6,7 +6,6 @@ import {
   Switch,
   Link
 } from 'react-router-dom';
-import characters from '../hooks/xfiles';
 import Xfiles from './xfiles/Xfiles';
 import XfileDetail from './xfiles/XfileDetail';
 
@@ -21,19 +20,12 @@ const About = ({ match }) => {
   console.log(match);
   return <h1>About {match.params.name}</h1>;
 };
-// const About = () => (
-//   <h1>About</h1>
-// );
 
 About.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({ name: PropTypes.string.isRequired })
   }).isRequired
 };
-
-// const Contact = () => (
-//   <h1>Contact</h1>
-// );
 
 const Header = () => (
   <header>
@@ -48,22 +40,13 @@ const Header = () => (
 );
 
 export default function App() {
-  //const characters = 
-  //return <h1>Hello World</h1>;
   return (
     <Router>
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
-        {/* <Route path="/about" component={About} /> */}
-        <Route path="/about/:name" component={About} />
+        {/* <Route path="/about/:name" component={About} /> */}
         <Route path="/xfile/:name" component={XfileDetail} />
-        {/* <Route path="/xfile/:name" component={Detail} /> */}
-        {/* <Route path="/contact" component={Contact} />
-        <Route path="/color/:color" component={Color} />
-
-        <Route exact path="/location" component={LocationSearch} />
-        <Route path="/location/:woeid" component={Forecast} /> */}
       </Switch>
     </Router>
   );

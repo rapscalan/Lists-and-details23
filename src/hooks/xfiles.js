@@ -8,10 +8,6 @@ export const useXfiles = () => {
       .then(setCharacters);
   });
   return characters;
-  // getLocations(searchTerm)
-  //     .then(setLocations);
-  //   // .then(newLocations => setLocations(newLocations));
-  // }, [searchTerm]);
 };
 
 export const useXfilesCharacter = (name) => {

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Xfile from './Xfile';
 import { useXfiles } from '../../hooks/xfiles';
 import { Link } from 'react-router-dom';
@@ -21,9 +20,5 @@ const Xfiles = () => {
     </ul>
   );
 };
-
-// Xfile.propTypes = {
-//   searchTerm: PropTypes.string.isRequired
-// };
 
 export default Xfiles;
